@@ -52,6 +52,13 @@ body {
   font-style: italic;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+
 /* media query */
 
 @media screen and (max-width: 1000px) {
