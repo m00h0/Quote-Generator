@@ -6,6 +6,12 @@ function showLoader() {
 quoteContainer.hidden = true;
 }
 
+function hideLoader() {
+  if (!loader.hidden) {
+      loader.hidden = true;
+      quoteContainer.hidden = false;
+  }
+  }
 
 async function getQuote() {
   const proxyUrl = 'https://api.allorigins.win/get?url=';
