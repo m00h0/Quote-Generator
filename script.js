@@ -4,25 +4,24 @@ const theAuthor = document.getElementById('author');
 const newQuote = document.getElementById('quote-button');
 const xQuote = document.getElementById('x');
 const quoteContainer = document.getElementById('quote-container');
-
 function showLoader() {
   loader.hidden = false;
-quoteContainer.hidden = true;
+  quoteContainer.hidden = true;
 }
 
 function hideLoader() {
   if (!loader.hidden) {
-      loader.hidden = true;
-      quoteContainer.hidden = false;
+    loader.hidden = true;
+    quoteContainer.hidden = false;
   }
-  }
+}
 
 async function getQuote() {
   const proxyUrl = 'https://api.allorigins.win/get?url=';
   const apiUrl = 'https://zenquotes.io/api/random';
   const url = `${proxyUrl + encodeURIComponent(apiUrl)}&${new Date().getTime()}`;
   try {
-    showLoader()
+    showLoader();
     const response = await fetch(url);
     const data = await response.json();
     const contents = JSON.parse(data.contents);
