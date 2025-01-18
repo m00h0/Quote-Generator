@@ -142,7 +142,7 @@ Give a ⭐️ if you like this project!
 ## 🙏 Acknowledgements <a name="acknowledgements"></a>
 
 - Inspired by [freeCodeCamp](https://www.freecodecamp.org/).
-- Quotes provided by [Quotes API](https://api.example.com).
+- Quotes provided by [Zen Quotes API](https://zenquotes.io/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
