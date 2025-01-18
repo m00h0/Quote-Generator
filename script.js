@@ -10,9 +10,9 @@ async function getQuote() {
         const quote = contents[0].q;
         const author = contents[0].a;
         const theQuote = document.getElementById('quote');
-        theQuote.innerHTML = quote;
+        theQuote.innerText = quote;
         const theAuthor = document.getElementById('author');
-        theAuthor.innerHTML = '- ' + author;
+        theAuthor.innerText = '- ' + author;
     } catch (error) {
         getQuote();
         console.log('Whoops, no quote', error);
