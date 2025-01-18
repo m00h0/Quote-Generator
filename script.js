@@ -1,8 +1,18 @@
+const loader = document.getElementById('load');
+const quoteContainer = document.getElementById('quote-container');
+
+function showLoader() {
+  loader.hidden = false;
+quoteContainer.hidden = true;
+}
+
+
 async function getQuote() {
   const proxyUrl = 'https://api.allorigins.win/get?url=';
   const apiUrl = 'https://zenquotes.io/api/random';
   const url = `${proxyUrl + encodeURIComponent(apiUrl)}&${new Date().getTime()}`;
   try {
+    showLoader()
     const response = await fetch(url);
     const data = await response.json();
     const contents = JSON.parse(data.contents);
@@ -13,6 +23,7 @@ async function getQuote() {
       theQuote.innerText = 'unknown';
     } else {
       theQuote.innerText = quote;
+      hideLoader();
     }
     const theAuthor = document.getElementById('author');
     if (author === '') {
