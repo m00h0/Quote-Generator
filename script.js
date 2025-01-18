@@ -28,4 +28,12 @@ async function getQuote() {
     }
 }
 
+function quoteX() {
+    const quote = document.getElementById('quote').innerText;
+    const author = document.getElementById('author').innerText;
+    const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(quote + ' ' + author)}`;
+    window.open(xUrl, '_blank');
+}
+
+
 getQuote();
