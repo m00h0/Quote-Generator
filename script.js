@@ -6,16 +6,25 @@ async function getQuote() {
         const response = await fetch(url);
         const data = await response.json();
         const contents = JSON.parse(data.contents);
-        console.log(contents);
         const quote = contents[0].q;
         const author = contents[0].a;
         const theQuote = document.getElementById('quote');
+        if (quote === '') {
+            theQuote.innerText = 'unknown';
+        }
+        else {
         theQuote.innerText = quote;
+        }
         const theAuthor = document.getElementById('author');
+        if (author === '') {
+            theAuthor.innerText = 'unknown';
+        }
+        else {
         theAuthor.innerText = '- ' + author;
-    } catch (error) {
+        }
+        } 
+    catch (error) {
         getQuote();
-        console.log('Whoops, no quote', error);
     }
 }
 
