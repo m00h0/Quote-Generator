@@ -36,7 +36,9 @@ function quoteX() {
 }
 
 const newQuote = document.getElementById('quote-button');
+const xQuote = document.getElementById('x');
 newQuote.addEventListener('click', getQuote);
+xQuote.addEventListener('click', quoteX);
 
 
 getQuote();
