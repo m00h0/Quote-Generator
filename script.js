@@ -1,4 +1,8 @@
 const loader = document.getElementById('load');
+const theQuote = document.getElementById('quote');
+const theAuthor = document.getElementById('author');
+const newQuote = document.getElementById('quote-button');
+const xQuote = document.getElementById('x');
 const quoteContainer = document.getElementById('quote-container');
 
 function showLoader() {
@@ -24,14 +28,12 @@ async function getQuote() {
     const contents = JSON.parse(data.contents);
     const quote = contents[0].q;
     const author = contents[0].a;
-    const theQuote = document.getElementById('quote');
     if (quote === '') {
       theQuote.innerText = 'unknown';
     } else {
       theQuote.innerText = quote;
       hideLoader();
     }
-    const theAuthor = document.getElementById('author');
     if (author === '') {
       theAuthor.innerText = 'unknown';
     } else {
@@ -49,8 +51,6 @@ function quoteX() {
   window.open(xUrl, '_blank');
 }
 
-const newQuote = document.getElementById('quote-button');
-const xQuote = document.getElementById('x');
 newQuote.addEventListener('click', getQuote);
 xQuote.addEventListener('click', quoteX);
 
