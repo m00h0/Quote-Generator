@@ -35,5 +35,8 @@ function quoteX() {
     window.open(xUrl, '_blank');
 }
 
+const newQuote = document.getElementById('quote-button');
+newQuote.addEventListener('click', getQuote);
+
 
 getQuote();
